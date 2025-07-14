@@ -1,19 +1,16 @@
 package functions
 
 import (
-	"math"
 	"sort"
 )
 
-func Median(nums []float64) int {
-	copyNums := make([]float64, len(nums))
-	copy(copyNums, nums)
-	sort.Float64s(copyNums)
+func Median(nums []float64) float64 {
+	sort.Float64s(nums)
 	med := 0.0
-	if len(copyNums)%2 != 0 {
-		med = copyNums[len(copyNums)/2]
+	if len(nums)%2 != 0 {
+		med = nums[len(nums)/2]
 	} else {
-		med = (copyNums[len(copyNums)/2] + copyNums[(len(copyNums)/2)-1]) / 2
+		med = (nums[len(nums)/2] + nums[(len(nums)/2)-1]) / 2
 	}
-	return int(math.Round(med))
+	return med
 }

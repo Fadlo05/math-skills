@@ -1,8 +1,6 @@
 package functions
 
-import "math"
-
-func Variance(nums []float64) int {
+func Variance(nums []float64) float64 {
 	avg := float64(Average(nums))
 	var gap []float64
 	for _, num := range nums {
@@ -17,5 +15,5 @@ func Variance(nums []float64) int {
 		sum += num
 	}
 	variance := sum / float64(len(nums))
-	return int(math.Round(variance))
+	return variance
 }
